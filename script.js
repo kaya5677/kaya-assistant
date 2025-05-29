@@ -63,7 +63,10 @@ function kayaSpeak(text) {
   msg.pitch = 1;
   msg.rate = 1;
   speechSynthesis.speak(msg);
-}
+}window.onload = function () {
+  document.getElementById("startButton").click();
+};
+
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
