@@ -84,3 +84,35 @@ function updateDateTime() {
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
+const voiceButton = document.getElementById("voiceButton");
+
+// Web Speech API
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (SpeechRecognition) {
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'ms-MY'; // Guna Bahasa Melayu
+  recognition.continuous = false;
+
+  voiceButton.addEventListener("click", () => {
+    recognition.start();
+    voiceButton.classList.add("listening");
+  });
+
+  recognition.onresult = (event) => {
+    const userSpeech = event.results[0][0].transcript;
+    console.log("Boss kata:", userSpeech);
+    // Di sini letak tindak balas kaya kepada suara Boss
+  };
+
+  recognition.onend = () => {
+    voiceButton.classList.remove("listening");
+  };
+
+  recognition.onerror = (e) => {
+    console.error("Ralat pengesanan suara:", e.error);
+    voiceButton.classList.remove("listening");
+  };
+} else {
+  alert("Browser tidak menyokong pengesanan suara.");
+}
