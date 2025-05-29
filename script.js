@@ -77,3 +77,10 @@ function kayaSpeak(text) {
   msg.rate = 1;
   speechSynthesis.speak(msg);
 }
+function updateDateTime() {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('datetime').innerText = now.toLocaleDateString('ms-MY', options) + ' ' + now.toLocaleTimeString('ms-MY');
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
