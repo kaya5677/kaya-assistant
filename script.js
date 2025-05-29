@@ -64,3 +64,6 @@ function kayaSpeak(text) {
   msg.rate = 1;
   speechSynthesis.speak(msg);
 }
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
