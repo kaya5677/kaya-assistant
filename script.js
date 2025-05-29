@@ -116,3 +116,28 @@ if (SpeechRecognition) {
 } else {
   alert("Browser tidak menyokong pengesanan suara.");
 }
+const wave = document.getElementById("voice-wave");
+
+try {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.continuous = true;
+  recognition.interimResults = false;
+  recognition.onstart = () => {
+    console.log("Voice recognition started.");
+  };
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[event.results.length - 1][0].transcript.trim();
+    if (transcript) {
+      wave.style.opacity = "1";
+      setTimeout(() => {
+        wave.style.opacity = "0";
+      }, 1500);
+    }
+  };
+
+  recognition.onerror = (e) => console.error("Speech error", e);
+  recognition.start();
+} catch (e) {
+  console.error("Speech recognition not supported", e);
+}
