@@ -76,33 +76,6 @@ footer {
   color: #666;
   text-align: center;
 }
-.kaya-button {
-  background: #00bcd4;
-  border: none;
-  padding: 12px 24px;
-  color: white;
-  font-weight: bold;
-  border-radius: 50px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-.kaya-button:hover {
-  transform: scale(1.05);
-  background-color: #0097a7;
-}
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-.kaya-button {
-  background-color: #1e1e1e;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+
 
 
