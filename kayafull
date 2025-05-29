@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>Kaya Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" />
+</head>
+<body>
+  <div id="kaya-ui">
+    <h1>Hi Boss, saya Kaya.</h1>
+    <p>Sedia menerima arahan suara atau sentuhan.</p>
+    <div class="controls">
+      <button onclick="startListening()">🎤 Aktifkan Suara</button>
+      <button onclick="respondText('Mainkan lagu')">▶️ Main Lagu</button>
+      <button onclick="respondText('Panggil bini saya')">📞 Call Bini</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
