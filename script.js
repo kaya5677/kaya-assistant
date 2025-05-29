@@ -70,3 +70,10 @@ function kayaSpeak(text) {
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
+function kayaSpeak(text) {
+  const msg = new SpeechSynthesisUtterance(text);
+  msg.voice = speechSynthesis.getVoices().find(v => v.name.includes('Daniel') || v.name.includes('UK English Male'));
+  msg.pitch = 1;
+  msg.rate = 1;
+  speechSynthesis.speak(msg);
+}
