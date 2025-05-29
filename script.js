@@ -57,3 +57,10 @@ if (speakButton) {
     input.value = '';
   });
 }
+function kayaSpeak(text) {
+  const msg = new SpeechSynthesisUtterance(text);
+  msg.lang = "ms-MY";
+  msg.pitch = 1;
+  msg.rate = 1;
+  speechSynthesis.speak(msg);
+}
