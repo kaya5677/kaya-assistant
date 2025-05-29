@@ -104,13 +104,6 @@ body.dark-mode {
   cursor: pointer;
   transition: 0.3s ease;
 }
-
-/* Animasi denyut */
-.kaya-button.listening {
-  animation: pulse 1.2s infinite;
-  background-color: #00bfff;
-}
-
 @keyframes pulse {
   0% {
     transform: scale(1);
