@@ -94,3 +94,34 @@ body.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
+.kaya-button {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Animasi denyut */
+.kaya-button.listening {
+  animation: pulse 1.2s infinite;
+  background-color: #00bfff;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 191, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0);
+  }
+}
