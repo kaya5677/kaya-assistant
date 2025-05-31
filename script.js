@@ -13,3 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     index++;
   }, 5000);
 });
+// Mainkan suara bila dipanggil
+function playVoice() {
+  const audio = document.getElementById("jarvisVoice");
+  audio.play();
+}
+
+// Panggil suara bila user tekan butang
+document.getElementById("responButton").addEventListener("click", playVoice);
