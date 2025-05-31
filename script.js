@@ -141,3 +141,5 @@ try {
 } catch (e) {
   console.error("Speech recognition not supported", e);
 }
+// Future: Boss boleh tambah trigger suara, respon interaktif di sini.
+console.log("Kaya hologram activated, Boss.");
