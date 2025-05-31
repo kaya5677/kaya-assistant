@@ -1,65 +1,54 @@
-// Hologram Kaya Assistant - J.A.R.V.I.S Mode
-
-const kayaOutput = document.getElementById("kaya-output");
-const micButton = document.getElementById("mic-button");
-const wave = document.querySelector(".wave-animation");
-const synth = window.speechSynthesis;
-
-let recognition;
-if ("webkitSpeechRecognition" in window) {
-  recognition = new webkitSpeechRecognition();
-  recognition.continuous = false;
-  recognition.lang = "en-MY";
-  recognition.interimResults = false;
-} else {
-  alert("Speech Recognition not supported in this browser.");
+body {
+  margin: 0;
+  background: black;
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-// Text-to-Speech (J.A.R.V.I.S style)
-function speak(text) {
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.rate = 1;
-  utter.pitch = 1.2;
-  utter.voice = synth.getVoices().find(v => v.name.includes("Google UK English Male")) || synth.getVoices()[0];
-  synth.speak(utter);
+.hologram-container {
+  text-align: center;
+  animation: pulse 3s infinite;
 }
 
-// Respond with AI voice & text
-function respondToCommand(command) {
-  const response = getJarvisResponse(command);
-  kayaOutput.textContent = response;
-  speak(response);
+.wave-animation {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border: 2px solid #0ff;
+  border-radius: 50%;
+  animation: none;
 }
 
-// Example AI logic (can be expanded)
-function getJarvisResponse(command) {
-  command = command.toLowerCase();
-  if (command.includes("hello") || command.includes("hi")) return "Greetings, Boss. Kaya is fully operational.";
-  if (command.includes("time")) return `Current time is ${new Date().toLocaleTimeString()}`;
-  if (command.includes("status")) return "All systems are running at 100%.";
-  return "I'm listening, Boss.";
+.wave-animation.active {
+  animation: wave 1s infinite;
 }
 
-// Start recognition
-function startListening() {
-  recognition.start();
-  wave.classList.add("active");
-  kayaOutput.textContent = "Listening...";
+#kaya-output {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px #0ff;
 }
 
-// Stop recognition and process
-recognition.onresult = function(event) {
-  const transcript = event.results[0][0].transcript;
-  kayaOutput.textContent = `You said: "${transcript}"`;
-  respondToCommand(transcript);
-  wave.classList.remove("active");
-};
+#mic-button {
+  background-color: transparent;
+  border: 2px solid #0ff;
+  padding: 10px 20px;
+  color: #0ff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
 
-recognition.onend = function() {
-  wave.classList.remove("active");
-};
+@keyframes wave {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
 
-micButton.addEventListener("click", () => {
-  if (synth.speaking) synth.cancel();
-  startListening();
-});
+@keyframes pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
