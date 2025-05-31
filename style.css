@@ -1,101 +1,57 @@
-/* Gaya asas halaman */
 body {
   margin: 0;
-  padding: 0;
-  background-color: #000; /* Latar hitam elegan */
-  font-family: 'Orbitron', sans-serif;
-  color: #0ff;
-  overflow: hidden;
-}
-
-/* Latar animasi bintang */
-.stars {
-  width: 100%;
+  background: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: cyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  background: url('assets/stars-bg.gif') repeat;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: 0.2;
 }
 
-/* Pusatkan kandungan hologram */
 .hologram-container {
   position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
-
-/* Gaya animasi hologram */
-.hologram {
   width: 300px;
-  height: auto;
-  animation: glow 2s infinite alternate, float 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px #0ff);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Nama atau status AI */
-.status {
-  margin-top: 20px;
-  font-size: 24px;
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
-  animation: pulseText 3s infinite;
+.hologram-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid cyan;
+  animation: pulse 2s infinite;
+  margin-bottom: 20px;
 }
 
-/* Butang kawalan */
-.control-button {
-  margin-top: 30px;
-  padding: 12px 24px;
-  font-size: 18px;
-  background-color: transparent;
-  border: 2px solid #0ff;
-  color: #0ff;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.control-button:hover {
-  background-color: rgba(0, 255, 255, 0.1);
-  box-shadow: 0 0 10px #0ff;
-}
-
-/* Efek berkilau hologram */
-@keyframes glow {
+@keyframes pulse {
   0% {
-    filter: drop-shadow(0 0 5px #0ff);
-  }
-  100% {
-    filter: drop-shadow(0 0 25px #0ff);
-  }
-}
-
-/* Efek teks denyut */
-@keyframes pulseText {
-  0% {
-    text-shadow: 0 0 10px #0ff;
-  }
-  100% {
-    text-shadow: 0 0 30px #0ff;
-  }
-}
-
-/* Efek melayang */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+    transform: scale(1);
+    opacity: 0.6;
   }
   50% {
-    transform: translateY(-15px);
+    transform: scale(1.2);
+    opacity: 1;
   }
   100% {
-    transform: translateY(0px);
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.hologram-ai {
+  text-align: center;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px cyan;
+  }
+  to {
+    text-shadow: 0 0 20px cyan, 0 0 30px cyan;
   }
 }
