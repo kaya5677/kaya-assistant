@@ -7,19 +7,23 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<!-- Tunjuk animasi hologram -->
-<div class="hologram-container">
-  <img src="assets/hologram.gif" alt="Kaya Hologram" class="hologram">
-</div>
 
-<!-- Suara respons AI -->
-<audio id="jarvisVoice" src="assets/jarvis.mp3"></audio>
-
+  <!-- Tunjuk animasi hologram -->
+  <div class="hologram-container">
+    <img src="assets/hologram.gif" alt="Kaya Hologram" class="hologram">
+    
+    <!-- Lingkaran dan UI teks respons AI -->
     <div class="hologram-circle"></div>
     <div class="hologram-ai">
       <p id="response">Hi Boss, I'm Kaya in Auto Mode.</p>
     </div>
   </div>
+
+  <!-- Suara respons AI -->
+  <audio id="jarvisVoice" src="assets/jarvis.mp3"></audio>
+
+  <!-- Script utama -->
   <script src="script.js"></script>
+
 </body>
 </html>
