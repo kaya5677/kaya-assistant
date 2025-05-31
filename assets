@@ -1,0 +1,9 @@
+kaya-assistant/
+│
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── assets/
+    ├── hologram.gif
+    └── jarvis.mp3
