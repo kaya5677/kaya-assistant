@@ -1,4 +1,6 @@
-script_js = """
+// 🧠 Auto response JARVIS
+
+// Fungsi utama bila DOM telah dimuatkan
 document.addEventListener("DOMContentLoaded", () => {
   const response = document.getElementById("response");
   const phrases = [
@@ -8,16 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     "Welcome back, Boss."
   ];
   let index = 0;
+
+  // Papar mesej setiap 5 saat
   setInterval(() => {
     response.textContent = phrases[index % phrases.length];
     index++;
   }, 5000);
 });
-// Mainkan suara bila dipanggil
+
+// 🔊 Mainkan suara JARVIS bila dipanggil
 function playVoice() {
   const audio = document.getElementById("jarvisVoice");
   audio.play();
 }
 
-// Panggil suara bila user tekan butang
-document.getElementById("responButton").addEventListener("click", playVoice);
+// 👆 Trigger suara bila user tekan butang
+const btn = document.getElementById("responButton");
+if (btn) {
+  btn.addEventListener("click", playVoice);
+}
