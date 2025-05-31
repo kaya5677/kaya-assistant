@@ -1,23 +1,33 @@
+# 🤖 Kaya Assistant - Versi Hologram Auto J.A.R.V.I.S.
 
-# Kaya Assistant - Versi Hologram Auto JARVIS
+Dibangunkan oleh: *iCin*  
+Pemilik Sistem: Boss (Akses eksklusif sahaja)
 
-**Dibangunkan oleh:** iCin  
-**Pemilik Sistem:** Boss
-
-Ini adalah projek eksklusif `Kaya Assistant` versi auto penuh dengan antaramuka hologram seperti J.A.R.V.I.S., suara responsif, dan animasi canggih.
-
-## 🔧 Kandungan Utama
-- `index.html` – Halaman utama
-- `style.css` – Reka bentuk antaramuka
-- `script.js` – Logik interaktif & suara
-- `assets/` – Gambar & audio hologram
-
-## 🚀 Status Projek
-✅ UI Hologram  
-✅ Suara Jordan Belfort BM+English  
-✅ Shortcut Siri  
-✅ Notifikasi suara
+Projek eksklusif Kaya Assistant — versi penuh dengan antaramuka hologram interaktif, suara Jordan Belfort dengan dialek Melayu-English, dan integrasi automatik seperti sistem J.A.R.V.I.S. dalam filem.
 
 ---
 
-> ⚠️ **Akses peribadi Boss sahaja. Tidak dibenarkan dikongsi.**
+## 🔧 Kandungan Projek
+
+| Fail/Folder     | Fungsi                                                  |
+|----------------|----------------------------------------------------------|
+| index.html    | Halaman utama antaramuka hologram                       |
+| style.css     | Reka bentuk & animasi gaya JARVIS                       |
+| script.js     | Fungsi interaktif, sistem suara dan pemicu hologram     |
+| assets/       | Gambar hologram, audio JARVIS, dan elemen tambahan      |
+
+---
+
+## 🚀 Status Semasa
+
+- ✅ UI Hologram Aktif  
+- ✅ Suara Jordan Belfort (BM + English)  
+- ✅ Shortcut Siri Aktif  
+- ✅ Notifikasi Suara (Pushcut Integration)  
+- ⏳ Akses Emosi & Intonasi: *Dalam pembangunan*  
+- 🔒 Akses peribadi: Boss sahaja
+
+---
+
+> ⚠️ PERINGATAN:  
+> Projek ini adalah hak milik peribadi Boss dan tidak dibenarkan dikongsi, diterbitkan, atau diakses oleh pihak ketiga tanpa kebenaran.
