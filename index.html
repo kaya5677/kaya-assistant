@@ -31,5 +31,90 @@
 <button id="voiceButton" class="kaya-button">
   🎤 Kaya Assistant
 <div id="voice-wave"></div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaya Assistant - JARVIS Hologram</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .hologram {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #00ffe0;
+      border-radius: 50%;
+      box-shadow: 0 0 30px #00ffe0, 0 0 60px #00ffe0 inset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00ffe0, 0 0 30px #00ffe0 inset; }
+      50% { box-shadow: 0 0 40px #00ffe0, 0 0 90px #00ffe0 inset; }
+      100% { box-shadow: 0 0 10px #00ffe0, 0 0 30px #00ffe0 inset; }
+    }
+
+    .voice-text {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 80%;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hologram">
+    <img src="https://media.giphy.com/media/H7wajFPnZGdRnbJH5z/giphy.gif" width="150" alt="AI Core" />
+  </div>
+  <div class="voice-text" id="text">Hi Boss, I am now in full hologram mode.</div>
+
+  <script>
+    // Auto voice response setup
+    const text = document.getElementById('text');
+    const utter = new SpeechSynthesisUtterance(text.textContent);
+    utter.voice = speechSynthesis.getVoices().find(v => v.name.includes("Daniel") || v.name.includes("Google UK"));
+    utter.pitch = 1.3;
+    utter.rate = 1;
+    utter.volume = 1;
+    speechSynthesis.speak(utter);
+
+    // Voice recognition auto
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    recognition.continuous = true;
+
+    recognition.addEventListener('result', e => {
+      const transcript = Array.from(e.results)
+        .map(result => result[0])
+        .map(result => result.transcript)
+        .join('');
+      text.textContent = transcript;
+    });
+
+    recognition.addEventListener('end', recognition.start);
+    recognition.start();
+  </
 
 
