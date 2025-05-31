@@ -1,3 +1,4 @@
+/* Gaya latar dan teks */
 body {
   margin: 0;
   background: black;
@@ -7,24 +8,30 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  flex-direction: column;
 }
 
+/* Bekas animasi hologram */
 .hologram-container {
   text-align: center;
   margin-top: 40px;
 }
 
+/* Gaya untuk teks respons AI */
+.hologram-ai {
+  text-align: center;
+  animation: glow 1.5s infinite alternate;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Animasi nadi (jika nak guna kelak) */
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.05); opacity: 1; }
 }
-}
 
-.hologram-ai {
-  text-align: center;
-  animation: glow 1.5s infinite alternate;
-}
-
+/* Animasi cahaya biru menyala */
 @keyframes glow {
   from {
     text-shadow: 0 0 10px cyan;
